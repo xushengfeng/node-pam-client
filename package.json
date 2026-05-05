@@ -1,0 +1,55 @@
+{
+    "name": "pam-client",
+    "version": "0.1.0",
+    "description": "pam client for node",
+    "keywords": [
+        "pam",
+        "linux"
+    ],
+    "repository": {
+        "url": "https://github.com/xushengfeng/node-pam-client"
+    },
+    "main": "dist/index.cjs",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build:rust": "npm run cargo-build -- --release",
+        "build:ts": "vite build",
+        "build:types": "tsc --emitDeclarationOnly --outDir dist",
+        "build": "npm run build:rust && npm run build:ts && npm run build:types",
+        "test:rust": "cargo test",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "test:coverage": "vitest run --coverage",
+        "test:all": "npm run test:rust && npm run test",
+        "cargo-build": "cargo build --message-format=json-render-diagnostics > cargo.log",
+        "cross-build": "cross build --message-format=json-render-diagnostics > cross.log",
+        "postcargo-build": "neon dist < cargo.log",
+        "postcross-build": "neon dist -m /target < cross.log",
+        "debug": "npm run cargo-build --"
+    },
+    "author": "",
+    "license": "Apache-2.0",
+    "type": "commonjs",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.cjs"
+        },
+        "./native": "./index.node"
+    },
+    "files": [
+        "dist",
+        "index.node",
+        "README.md"
+    ],
+    "devDependencies": {
+        "@neon-rs/cli": "0.1.82",
+        "@types/node": "^25.6.0",
+        "tsx": "^4.21.0",
+        "typescript": "^6.0.3",
+        "vite": "^8.0.10",
+        "vitest": "^4.1.5"
+    }
+}

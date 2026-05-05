@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "declaration": true,
+    "rootDir": "./src",
+    "declarationDir": "./dist",
+    "module": "commonjs",
+    "target": "es2022",
+    "types": [
+      "node"
+    ],
+    "sourceMap": true,
+    "declarationMap": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "strict": true,
+    "verbatimModuleSyntax": false,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+  },
+  "exclude": [
+    "vite.config.ts",
+    "**/*.test.ts"
+  ]
+}

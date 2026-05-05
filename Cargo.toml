@@ -1,0 +1,15 @@
+[package]
+name = "pam-client"
+version = "0.1.0"
+license = "Apache-2.0"
+edition = "2024"
+exclude = ["index.node"]
+
+[lib]
+crate-type = ["cdylib"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+neon = "1.1"
+pam = "0.8.0"
