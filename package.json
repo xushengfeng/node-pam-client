@@ -1,6 +1,6 @@
 {
     "name": "myde-pam-client",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "pam client for node",
     "keywords": [
         "pam",
