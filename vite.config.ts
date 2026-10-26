@@ -13,8 +13,8 @@ export default defineConfig({
 			formats: ["es", "cjs"],
 		},
 		rollupOptions: {
-			// 确保原生模块被排除在打包之外
-			external: [/\.node$/],
+			// 确保原生模块和 Node 内置模块被排除在打包之外
+			external: [/^node:/, /\.node$/],
 			output: {
 				exports: "named",
 			},
